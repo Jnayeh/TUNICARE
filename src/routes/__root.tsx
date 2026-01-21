@@ -48,6 +48,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
     <html lang="en">
       <head>
         <HeadContent />
+        <script> console.log("foo fighters"); </script>
       </head>
       <body>
         <Header />

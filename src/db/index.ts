@@ -9,5 +9,6 @@ config()
 
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL!,
+  max: 19
 })
 export const db = drizzle(pool, { schema })

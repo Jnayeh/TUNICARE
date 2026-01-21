@@ -30,6 +30,13 @@ export default function Header() {
         >
           <Menu size={24} />
         </button>
+        <button
+          onClick={() => window.history.back()}
+          className="p-2 hover:bg-gray-700 rounded-lg transition-colors"
+          aria-label="Go back"
+        >
+          Go back
+        </button>
         <h1 className="ml-4 text-xl font-semibold">
           <Link to="/">
             <img

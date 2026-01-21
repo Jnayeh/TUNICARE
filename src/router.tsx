@@ -10,6 +10,7 @@ export const getRouter = () => {
   const rqContext = TanstackQuery.getContext()
 
   const router = createRouter({
+   defaultNotFoundComponent(props) { return <div>Not found</div> },
     routeTree,
     context: { ...rqContext },
     defaultPreload: 'intent',
