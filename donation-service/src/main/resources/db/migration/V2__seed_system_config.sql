@@ -1,0 +1,20 @@
+INSERT INTO system_config (id, config_key, config_value, description, is_active, updated_at)
+VALUES
+    (1,
+     'cooldown.days',
+     '{"value": 56}'::jsonb,
+     'Days between whole blood donations',
+     TRUE,
+     now()),
+    (2,
+     'default.match.radius.km',
+     '{"value": 25}'::jsonb,
+     'Default emergency matching radius in km',
+     TRUE,
+     now()),
+    (3,
+     'appointment.confirm.timeout.hours',
+     '{"value": 24}'::jsonb,
+     'Hours until unconfirmed slot is released',
+     TRUE,
+     now());
