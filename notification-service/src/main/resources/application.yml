@@ -1,0 +1,39 @@
+micronaut:
+  application:
+    name: notification-service
+  router:
+    static-resources:
+      swagger:
+        paths: classpath:META-INF/swagger
+        mapping: /swagger/**
+
+netty:
+  default:
+    allocator:
+      max-order: 3
+
+datasources:
+  default:
+    url: jdbc:postgresql://localhost:5433/qatra_notifications
+    username: appuser
+    password: apppass
+    driver-class-name: org.postgresql.Driver
+
+flyway:
+  datasources:
+    default:
+      enabled: true
+      locations: classpath:db/migration
+
+kafka:
+  bootstrap:
+    servers: localhost:9092
+  consumers:
+    default:
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+
+qatra:
+  kafka:
+    notification-topic: qatra.notification.requests
+    consumer-group: notification-service
